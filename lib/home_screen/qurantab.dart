@@ -36,41 +36,6 @@ class QuranTab extends StatelessWidget {
               return Center(child: SurasNames(index));
             },
           )),
-
-          // child: Table(
-          //   // border: TableBorder.all(color: MyTheme.colorGold,width: 5),
-          //   children: [
-          //
-          //     TableRow(children: [
-          //       // Divider(),
-          //       Center(child: ListView.separated(
-          //         physics: AlwaysScrollableScrollPhysics(),
-          //
-          //         separatorBuilder: (context, index) => Divider(),
-          //         shrinkWrap: true,
-          //         itemCount: AppData.surasNumber.length,
-          //         itemBuilder: (context, index) {
-          //           return Center(child: Text( AppData.surasNumber[index],style: Theme.of(context).textTheme.subtitle2));
-          //         },)),
-          //       // Divider(),
-          //       Center(child: ListView.builder(
-          //         physics: AlwaysScrollableScrollPhysics(),
-          //         shrinkWrap: true,
-          //         itemCount:  AppData.surasName.length,
-          //         // scrollDirection: Axis.vertical,
-          //         itemBuilder: (context, index) {
-          //         return Center(child: InkWell(
-          //             onTap: () {
-          //               Navigator.pushNamed(
-          //                   context, SuraDetails.RouteName,
-          //               arguments: SuraModel(AppData.surasName[index], index)
-          //               );
-          //             },
-          //             child: Text( AppData.surasName[index],style: Theme.of(context).textTheme.subtitle2)));
-          //       },)),
-          //     ])
-          //   ],
-          // ),
         ],
       ),
     );
