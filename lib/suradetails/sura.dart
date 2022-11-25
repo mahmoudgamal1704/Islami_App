@@ -34,6 +34,7 @@ class _SuraDetailsState extends State<SuraDetails> {
           centerTitle: true,
         ),
         body: Container(
+          // alignment: Alignment.centerRight,
           margin: EdgeInsets.only(top: 80),
           width: double.infinity,
           child: Column(
@@ -48,10 +49,12 @@ class _SuraDetailsState extends State<SuraDetails> {
                 itemBuilder: (context, index) {
                   return ayat.isEmpty
                       ? CircularProgressIndicator()
-                      : Text(
-                          ayat[index],
-                          style: Theme.of(context).textTheme.subtitle2,
-                        );
+                      : Center(
+                        child: Text(
+                            ayat[index],
+                            style: Theme.of(context).textTheme.subtitle2,
+                          ),
+                      );
                 },
               ))
             ],

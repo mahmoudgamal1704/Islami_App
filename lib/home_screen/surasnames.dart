@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:islami/data.dart';
-
 import '../mytheme.dart';
 import '../suradetails/sura.dart';
 import '../suradetails/suramodel.dart';
