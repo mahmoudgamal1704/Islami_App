@@ -10,6 +10,11 @@ class MyTheme {
         centerTitle: true,
         elevation: 0.0,
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: colorGold,
+        selectedItemColor: colorBlack,
+        unselectedItemColor: Colors.white,
+      ),
       textTheme: TextTheme(
           headline1: TextStyle(
         fontSize: 30,
