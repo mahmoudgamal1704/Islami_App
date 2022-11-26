@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class MyTheme {
   static Color colorBlack = Color.fromRGBO(36, 36, 36, 1.0);
   static Color colorGold = Color.fromRGBO(183, 147, 95, 1.0);
+  // static Color colorGolddark = Color.fromRGBO(183, 147, 95, 1.0);
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
