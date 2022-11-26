@@ -7,9 +7,7 @@ import '../suradetails/suramodel.dart';
 class SurasNames extends StatelessWidget {
   // const SurasNames({Key? key}) : super(key: key);
   int index;
-
   SurasNames(this.index);
-
   @override
   Widget build(BuildContext context) {
     return Table(

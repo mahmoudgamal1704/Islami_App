@@ -1,3 +1,7 @@
+import 'dart:core';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 class AppData {
 
   static const List<String> surasName = [
@@ -232,6 +236,5 @@ class AppData {
     "5",
     "6"
   ];
-
-
+  static const List<String> azkar = ['سبحان الله','الحمدلله','الله اكبر','لا اله الا الله','لا حول ولا قوة الا بالله'];
 }
