@@ -252,7 +252,6 @@ class AppData {
     List<AhadethData> ahadethdata=[];
     var hadeth;
     var title;
-    print(allahadeth[5]);
     for (int i = 0 ; i <allahadeth.length;i++){
       hadeth = allahadeth[i].trim().split('\n');
       title = hadeth[0];
