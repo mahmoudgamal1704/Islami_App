@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/data.dart';
 
 import 'package:islami/hadethdetails/hadeth.dart';
 import 'package:islami/mytheme.dart';
 
 class AhadethTab extends StatelessWidget {
   // const QuranTab({Key? key}) : super(key: key);
-  var ahadeth = [];
+  //  var ahadeth = [];
+  // var hadeth=[];
+  Map Allahadeth={};
 
   AhadethTab() {
     Loadazkar();
@@ -14,8 +17,11 @@ class AhadethTab extends StatelessWidget {
 
   void Loadazkar() async {
     var content = await rootBundle.loadString('assets/files/ahadeth.txt');
+    print(content);
     List<String> contentlines = content.split('#');
-    ahadeth = contentlines;
+    // ahadeth = contentlines;
+    print(contentlines);
+    // Allahadeth = AppData.ManageahadethData(contentlines);
   }
 
   @override
@@ -40,19 +46,20 @@ class AhadethTab extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ahadeth.isEmpty
+            child: Allahadeth.isEmpty
                 ? CircularProgressIndicator()
                 : ListView.builder(
-                    itemCount: ahadeth.length,
+                    itemCount: Allahadeth.length,
                     itemBuilder: (context, index) => Center(
                         child: InkWell(
                             onTap: () {
                               Navigator.pushNamed(
                                   context, HadethDetails.RouteName,
-                                  arguments: ahadeth[index]);
+                                  arguments: Allahadeth[index]);
                             },
                             child: Text(
-                              'الحديث رقم ${index + 1}',
+                                '${Allahadeth[index]}',
+                              // 'الحديث رقم ${index + 1}',
                               style: Theme.of(context).textTheme.subtitle2,
                             ))),
                   ),

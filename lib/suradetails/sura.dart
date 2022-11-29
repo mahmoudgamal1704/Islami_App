@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/data.dart';
+import 'package:islami/mytheme.dart';
 import 'package:islami/suradetails/suramodel.dart';
 
 class SuraDetails extends StatefulWidget {
@@ -12,7 +14,7 @@ class SuraDetails extends StatefulWidget {
 
 class _SuraDetailsState extends State<SuraDetails> {
   List<String> ayat = [];
-
+   String ayanum = '';
   @override
   Widget build(BuildContext context) {
     var suradetaile = ModalRoute.of(context)?.settings.arguments as SuraModel;
@@ -44,18 +46,32 @@ class _SuraDetailsState extends State<SuraDetails> {
                 style: Theme.of(context).textTheme.subtitle1,
               ),
               Expanded(
-                  child: ListView.builder(
-                itemCount: ayat.length,
-                itemBuilder: (context, index) {
-                  return ayat.isEmpty
-                      ? CircularProgressIndicator()
-                      : Center(
-                        child: Text(
-                            ayat[index],
-                            style: Theme.of(context).textTheme.subtitle2,
-                          ),
-                      );
-                },
+                  child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  border: Border.all(color: MyTheme.colorGold),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      bottomRight: Radius.circular(25)),
+                ),
+                child: ListView.builder(
+                  itemCount: ayat.length,
+                  itemBuilder: (context, index) {
+                    if(index > 0){
+                      ayanum='(${AppData.replaceFarsiNumber('${index}')})';
+                    }
+                    return ayat.isEmpty
+                        ? CircularProgressIndicator()
+                        : Center(
+                            child: Text(
+                              textDirection: TextDirection.rtl ,
+                              ' ${ayat[index]} $ayanum ',
+                              style: Theme.of(context).textTheme.subtitle2,
+                            ),
+                          );
+                  },
+                ),
               ))
             ],
           ),
@@ -68,6 +84,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     var content = await rootBundle.loadString('assets/files/${index + 1}.txt');
     List<String> contentlines = content.split('\n');
     ayat = contentlines;
+    ayat.insert(0 , 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ');
     setState(() {});
   }
 }
