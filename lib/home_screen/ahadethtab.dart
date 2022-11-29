@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'package:islami/hadethdetails/hadeth.dart';
 import 'package:islami/mytheme.dart';
@@ -32,7 +33,7 @@ class AhadethTab extends StatelessWidget {
                     bottom: BorderSide(color: MyTheme.colorGold, width: 4))),
             child: Center(
               child: Text(
-                'الأحاديث',
+                AppLocalizations.of(context)!.ahadeth,
                 style: Theme.of(context).textTheme.subtitle2,
               ),
             ),

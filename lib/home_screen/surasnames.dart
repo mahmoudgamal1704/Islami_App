@@ -16,9 +16,7 @@ class SurasNames extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            Center(
-                child: Text('${AppData.replaceFarsiNumber('${AppData.surasNumber[this.index]}')}',
-                    style: Theme.of(context).textTheme.subtitle2)),
+
             Center(
               child: InkWell(
                   onTap: () {
@@ -28,6 +26,9 @@ class SurasNames extends StatelessWidget {
                   child: Text(AppData.surasName[this.index],
                       style: Theme.of(context).textTheme.subtitle2)),
             ),
+            Center(
+                child: Text('${AppData.replaceFarsiNumber('${AppData.surasNumber[this.index]}')}',
+                    style: Theme.of(context).textTheme.subtitle2)),
           ],
         )
       ],
