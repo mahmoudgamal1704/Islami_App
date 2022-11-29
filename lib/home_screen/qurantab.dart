@@ -24,7 +24,7 @@ class QuranTab extends StatelessWidget {
                   style: Theme.of(context).textTheme.subtitle2,
                 )),
                 Center(
-                    child: Text('إسم الصورة',
+                    child: Text('إسم السورة',
                         style: Theme.of(context).textTheme.subtitle2))
               ]),
             ],

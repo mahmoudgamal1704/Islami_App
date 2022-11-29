@@ -17,7 +17,7 @@ class SurasNames extends StatelessWidget {
         TableRow(
           children: [
             Center(
-                child: Text(AppData.surasNumber[this.index],
+                child: Text('${AppData.replaceFarsiNumber('${AppData.surasNumber[this.index]}')}',
                     style: Theme.of(context).textTheme.subtitle2)),
             Center(
               child: InkWell(
