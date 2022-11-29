@@ -248,20 +248,34 @@ class AppData {
 
     return input;
   }
-  static Map ManageahadethData(List<String> allahadeth){
-    Map AllAhadeth = {};
+  static List ManageahadethData(List<String> allahadeth){
+    // Map AllAhadeth = {'0':'gemy'};
+    List<AhadethData> ahadethdata=[];
     var hadeth;
     var title;
-    print(allahadeth);
-      for(int i = 0 ; i<allahadeth.length ; i++){
-         hadeth = allahadeth[i].split('\n');
-         // print(hadeth);
-        title = hadeth[0];
-        hadeth.removeAt(0);
-        AllAhadeth[title]=hadeth[0];
-        // print(AllAhadeth);
-      }
-
-    return AllAhadeth;
+    // int c = 0;
+    print(allahadeth[5]);
+    for (int i = 0 ; i <allahadeth.length;i++){
+      // c++;
+      hadeth = allahadeth[i].trim().split('\n');
+      // print('${allahadeth} bbbbb');
+      // print('${hadeth} aaaaaa');
+      title = hadeth[0];
+      hadeth.removeAt(0);
+      // print(hadeth);
+      ahadethdata.add(AhadethData(title, hadeth));
+      // AllAhadeth.addAll({title: hadeth});
+      // AllAhadeth[title]=hadeth;
+    }
+    // print(c);
+    // print(AllAhadeth.keys.toList().length);
+    return ahadethdata;
   }
+}
+
+class AhadethData{
+
+  String title;
+  List<String> content;
+  AhadethData(this.title,this.content);
 }
