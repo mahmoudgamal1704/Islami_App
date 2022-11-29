@@ -8,20 +8,14 @@ import 'package:islami/mytheme.dart';
 class AhadethTab extends StatelessWidget {
   // const QuranTab({Key? key}) : super(key: key);
   var ahadeth = [];
-  // Map ahadethMap = {};
-
   AhadethTab() {
     Loadazkar();
   }
-
   void Loadazkar() async {
     var content = await rootBundle.loadString('assets/files/ahadeth.txt');
     List<String> contentlines = content.split('#');
     ahadeth = AppData.ManageahadethData(contentlines);
-
-    // ahadeth = contentlines;
   }
-
   @override
   Widget build(BuildContext context) {
     return Container(

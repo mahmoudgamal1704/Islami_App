@@ -47,7 +47,6 @@ class HadethDetails extends StatelessWidget {
               child: Align(
                 alignment: Alignment.center,
                 child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         '${hadeth.title}',
