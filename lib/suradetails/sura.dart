@@ -50,7 +50,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                 margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  border: Border.all(color: MyTheme.colorGold),
+                  border: Border.all(color: MyTheme.colorGold,width: 5),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(25),
                       bottomRight: Radius.circular(25)),

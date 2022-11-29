@@ -34,8 +34,8 @@ class HadethDetails extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(10)
+                    topLeft: Radius.circular(25),
+                    bottomRight: Radius.circular(25)
                 ),
                 border: Border.all(color: MyTheme.colorGold, width: 5),
 
