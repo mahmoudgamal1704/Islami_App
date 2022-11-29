@@ -238,5 +238,31 @@ class AppData {
   ];
   static const List<String> azkar = ['سبحان الله','الحمدلله','الله اكبر','لا اله الا الله','لا حول ولا قوة الا بالله'];
 
+  static String replaceFarsiNumber(String input) {
+    const english = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    const farsi = ['۰', '۱', '۲', '۳', '٤', '۵', '٦', '۷', '۸', '۹'];
 
+    for (int i = 0; i < english.length; i++) {
+      input = input.replaceAll(english[i], farsi[i]);
+    }
+
+    return input;
+  }
+  static List ManageahadethData(List<String> allahadeth){
+    List<AhadethData> ahadethdata=[];
+    var hadeth;
+    var title;
+    for (int i = 0 ; i <allahadeth.length;i++){
+      hadeth = allahadeth[i].trim().split('\n');
+      title = hadeth[0];
+      hadeth.removeAt(0);
+      ahadethdata.add(AhadethData(title, hadeth));
+    }
+    return ahadethdata;
+  }
+}
+class AhadethData{
+  String title;
+  List<String> content;
+  AhadethData(this.title,this.content);
 }

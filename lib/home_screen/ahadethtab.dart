@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/data.dart';
 
 import 'package:islami/hadethdetails/hadeth.dart';
 import 'package:islami/mytheme.dart';
@@ -7,17 +8,14 @@ import 'package:islami/mytheme.dart';
 class AhadethTab extends StatelessWidget {
   // const QuranTab({Key? key}) : super(key: key);
   var ahadeth = [];
-
   AhadethTab() {
     Loadazkar();
   }
-
   void Loadazkar() async {
     var content = await rootBundle.loadString('assets/files/ahadeth.txt');
     List<String> contentlines = content.split('#');
-    ahadeth = contentlines;
+    ahadeth = AppData.ManageahadethData(contentlines);
   }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,10 +47,10 @@ class AhadethTab extends StatelessWidget {
                             onTap: () {
                               Navigator.pushNamed(
                                   context, HadethDetails.RouteName,
-                                  arguments: ahadeth[index]);
+                                  arguments: AhadethData(ahadeth[index].title, ahadeth[index].content));
                             },
                             child: Text(
-                              'الحديث رقم ${index + 1}',
+                              '${ahadeth[index].title}',
                               style: Theme.of(context).textTheme.subtitle2,
                             ))),
                   ),
