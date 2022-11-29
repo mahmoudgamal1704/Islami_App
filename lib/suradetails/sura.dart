@@ -58,7 +58,6 @@ class _SuraDetailsState extends State<SuraDetails> {
                 child: ListView.builder(
                   itemCount: ayat.length,
                   itemBuilder: (context, index) {
-                    print(index);
                     if(index > 0){
                       ayanum='(${AppData.replaceFarsiNumber('${index}')})';
                     }else{
