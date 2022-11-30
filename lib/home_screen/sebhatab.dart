@@ -12,7 +12,8 @@ class SebhaTab extends StatefulWidget {
 class _SebhaTabState extends State<SebhaTab> {
   static int count = 0;
   static int azkarindex = 0;
-  static double degree = 0;
+  static double degree = -10.91;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,24 +21,37 @@ class _SebhaTabState extends State<SebhaTab> {
       child: Column(
         children: [
           Expanded(
-            child: InkWell(
-                onTap: () {
-                  count++;
-                  degree+=10.91;
-                  if (count > 32) {
-                    count = 0;
-                    degree=0;
-                    azkarindex++;
-                    if (azkarindex == AppData.azkar.length) {
-                      azkarindex = 0;
-                    }
-                  }
-                  setState(() {});
-                },
-                child: RotationTransition(
-                    
-                    turns: AlwaysStoppedAnimation(degree / 360),
-                    child: Image.asset('assets/images/sebhapic.png'))),
+            child: Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 50,top: 10),
+                  child: Image.asset(
+                      alignment: Alignment.center,
+                      'assets/images/sebhahead.png'),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 90),
+                  child: InkWell(
+                      onTap: () {
+                        count++;
+                        degree += 10.91;
+                        if (count > 32) {
+                          count = 0;
+                          degree = -10.91;
+                          azkarindex++;
+                          if (azkarindex == AppData.azkar.length) {
+                            azkarindex = 0;
+                          }
+                        }
+                        setState(() {});
+                      },
+                      child: RotationTransition(
+                          turns: AlwaysStoppedAnimation(degree / 360),
+                          child: Image.asset('assets/images/sebhabodycolored.png'))),
+                ),
+              ],
+            ),
           ),
           Text(
             'عدد التسبيحات',
