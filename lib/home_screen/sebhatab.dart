@@ -20,36 +20,19 @@ class _SebhaTabState extends State<SebhaTab> {
       child: Column(
         children: [
           Expanded(
-            child: Stack(
-              children: [
-                Container(
-                  child: Positioned(
-                    top: 70,
-                    left: 80,
-                    child: InkWell(
-                        onTap: () {
-                          count++;
-                          if (count > 32) {
-                            count = 0;
-                            azkarindex++;
-                            if (azkarindex == AppData.azkar.length) {
-                              azkarindex = 0;
-                            }
-                          }
-                          setState(() {});
-                        },
-                        child: Image.asset('assets/images/sebhabody.png')),
-                  ),
-                ),
-                Container(
-                  child: Positioned(
-                    top: 0,
-                    left: 180,
-                    child: Image.asset('assets/images/sebhahead.png'),
-                  ),
-                ),
-              ],
-            ),
+            child: InkWell(
+                onTap: () {
+                  count++;
+                  if (count > 32) {
+                    count = 0;
+                    azkarindex++;
+                    if (azkarindex == AppData.azkar.length) {
+                      azkarindex = 0;
+                    }
+                  }
+                  setState(() {});
+                },
+                child: Image.asset('assets/images/sebhapic.png')),
           ),
           Text(
             'عدد التسبيحات',
