@@ -9,7 +9,7 @@ class MyProvider extends ChangeNotifier{
   String CurrentLang  = 'العربية';
 
   ThemeMode appmode = ThemeMode.light;
-  String CurrentTheme = 'Light';
+  String CurrentTheme = 'الوضع النهارى';
   String bgpath = 'assets/images/main_background.png';
 
   void changeLanguage(String lang,String currentlang){

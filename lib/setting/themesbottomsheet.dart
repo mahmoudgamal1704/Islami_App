@@ -17,30 +17,30 @@ class ThemesBottomSheet extends StatelessWidget {
         children: [
           InkWell(
             onTap: (){
-              pro.changeThemeMode(ThemeMode.light,'Light','assets/images/main_background.png');
+              pro.changeThemeMode(ThemeMode.light,AppLocalizations.of(context)!.modelight,'assets/images/main_background.png');
               Navigator.pop(context);
               // MySettings.CurrentLang=;
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Light',style: Theme.of(context).textTheme.subtitle2),
-                Icon(Icons.done,size: 35,color: pro.appmode==ThemeMode.light? MyTheme.colorBlack :Colors.transparent,)
+                Text(AppLocalizations.of(context)!.modelight,style: Theme.of(context).textTheme.subtitle2),
+                Icon(Icons.done,size: 35,color: pro.appmode!=ThemeMode.light? Theme.of(context).colorScheme.background :Theme.of(context).colorScheme.secondary,)
               ],
             ),
           ),
           SizedBox(height: 20,),
           InkWell(
             onTap: (){
-              pro.changeThemeMode(ThemeMode.dark,'Dark','assets/images/bg_dark.png');
+              pro.changeThemeMode(ThemeMode.dark,AppLocalizations.of(context)!.modedark,'assets/images/bg_dark.png');
               Navigator.pop(context);
               // MySettings.CurrentLang=AppLocalizations.of(context)!.langar;
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Dark', style: Theme.of(context).textTheme.subtitle2),
-                Icon(Icons.done,size: 35,color: pro.appmode==ThemeMode.dark?MyTheme.darkyellow: Colors.transparent ,)
+                Text(AppLocalizations.of(context)!.modedark, style: Theme.of(context).textTheme.subtitle2),
+                Icon(Icons.done,size: 35,color: pro.appmode!=ThemeMode.dark?Theme.of(context).colorScheme.background :Theme.of(context).colorScheme.secondary ,)
               ],
             ),
           )

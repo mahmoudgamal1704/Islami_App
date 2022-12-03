@@ -5,6 +5,15 @@
     "ahadeth": "Ahadeth",
     "langtitle":"Language",
      "modetitle":"Theme Mode",
+     "qurantab":"Quran",
+     "ahadethtab":"Ahadeth",
+     "sebhatab":"Sebha",
+     "radiotab":"Radio",
+     "settingtab":"Settings",
+     "sebhatxt":"Praises Count",
+     "radiotxt":"Quran Radio",
+     "modelight":"Light Mode",
+     "modedark":"Dark Mode",
      "langen":"English",
      "langar":"Arabic"
 

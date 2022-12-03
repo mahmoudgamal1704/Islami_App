@@ -1,8 +1,11 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:islami/data.dart';
 import 'package:islami/mytheme.dart';
 import 'package:islami/provider/my_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTab extends StatefulWidget {
   // const QuranTab({Key? key}) : super(key: key);
@@ -66,7 +69,7 @@ class _SebhaTabState extends State<SebhaTab> {
             ),
           ),
           Text(
-            'عدد التسبيحات',
+            AppLocalizations.of(context)!.sebhatxt,
             style: Theme.of(context).textTheme.subtitle2,
           ),
           SizedBox(

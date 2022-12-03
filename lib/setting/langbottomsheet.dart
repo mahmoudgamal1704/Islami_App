@@ -26,7 +26,7 @@ class LangBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(AppLocalizations.of(context)!.langen,style: Theme.of(context).textTheme.subtitle2),
-                Icon(Icons.done,size: 35,color: pro.LanguageCode!='en'? Colors.transparent : pro.appmode==ThemeMode.light? MyTheme.colorBlack:MyTheme.darkyellow,)
+                Icon(Icons.done,size: 35,color: pro.LanguageCode!='en'? Theme.of(context).colorScheme.background :Theme.of(context).colorScheme.secondary)
               ],
             ),
           ),
@@ -41,7 +41,7 @@ class LangBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(AppLocalizations.of(context)!.langar, style: Theme.of(context).textTheme.subtitle2),
-                Icon(Icons.done,size: 35,color: pro.LanguageCode!='ar'? Colors.transparent :pro.appmode==ThemeMode.light? MyTheme.colorBlack:MyTheme.darkyellow,)
+                Icon(Icons.done,size: 35,color: pro.LanguageCode!='ar'? Theme.of(context).colorScheme.background :Theme.of(context).colorScheme.secondary)
               ],
             ),
           )

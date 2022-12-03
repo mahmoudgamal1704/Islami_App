@@ -52,7 +52,7 @@ class MySettings extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border.all(width: 3, color: MyTheme.colorGold),
                   borderRadius: BorderRadius.circular(12)),
-              child: Text(prov.CurrentTheme, style: Theme.of(context).textTheme.subtitle2),
+              child: Text(prov.appmode==ThemeMode.light?AppLocalizations.of(context)!.modelight:AppLocalizations.of(context)!.modedark, style: Theme.of(context).textTheme.subtitle2),
             ),
           ),
         ],

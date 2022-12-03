@@ -47,29 +47,29 @@ class _HomeState extends State<Home> {
               });
             },
             type: BottomNavigationBarType.fixed,
-            items: const [
+            items:  [
               BottomNavigationBarItem(
                   // backgroundColor: MyTheme.colorGold,
 
-                  label: 'Quran',
+                  label: AppLocalizations.of(context)!.qurantab,
                   icon: ImageIcon(AssetImage('assets/images/moshaf_blue.png'),size: 30)),
               BottomNavigationBarItem(
                 // backgroundColor: MyTheme.colorGold,
 
-                  label: 'Ahadeth',
+                  label: AppLocalizations.of(context)!.ahadeth,
                   icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),size: 30)),
               BottomNavigationBarItem(
                 // backgroundColor: MyTheme.colorGold,
 
-                  label: 'Sebha',
+                  label: AppLocalizations.of(context)!.sebhatab,
                   icon: ImageIcon(AssetImage('assets/images/sebha_blue.png'),size: 30,)),
               BottomNavigationBarItem(
                 // backgroundColor: MyTheme.colorGold,
-                  label: 'Radio',
+                  label:AppLocalizations.of(context)!.radiotab,
                   icon: ImageIcon(AssetImage('assets/images/radio_blue.png'),size: 30)),
               BottomNavigationBarItem(
                 // backgroundColor: MyTheme.colorGold,
-                  label: 'Settings',
+                  label: AppLocalizations.of(context)!.settingtab,
                   icon: Icon(Icons.settings)),
             ],
           ),
