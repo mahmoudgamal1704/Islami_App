@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/provider/my_provider.dart';
+import 'package:islami/setting/themesbottomsheet.dart';
 import 'package:provider/provider.dart';
 
 import 'langbottomsheet.dart';
@@ -42,12 +43,17 @@ class MySettings extends StatelessWidget {
             AppLocalizations.of(context)!.modetitle,
             style: Theme.of(context).textTheme.subtitle1,
           ),
-          Container(
-            padding: EdgeInsets.all(12),
-            decoration: BoxDecoration(
-                border: Border.all(width: 3, color: MyTheme.colorGold),
-                borderRadius: BorderRadius.circular(12)),
-            child: Text('Light', style: Theme.of(context).textTheme.subtitle2),
+          InkWell(
+            onTap: (){
+              showthemesBottomSheet(context);
+            },
+            child: Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                  border: Border.all(width: 3, color: MyTheme.colorGold),
+                  borderRadius: BorderRadius.circular(12)),
+              child: Text(prov.CurrentTheme, style: Theme.of(context).textTheme.subtitle2),
+            ),
           ),
         ],
       ),
@@ -56,6 +62,11 @@ class MySettings extends StatelessWidget {
   void showLAnguageBottomSheet(BuildContext context){
     showModalBottomSheet(context: context, builder: (context){
       return LangBottomSheet();
+    });
+  }
+  void showthemesBottomSheet(BuildContext context){
+    showModalBottomSheet(context: context, builder: (context){
+      return ThemesBottomSheet();
     });
   }
 }

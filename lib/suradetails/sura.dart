@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/data.dart';
 import 'package:islami/mytheme.dart';
+import 'package:islami/provider/my_provider.dart';
 import 'package:islami/suradetails/suramodel.dart';
 import 'package:provider/provider.dart';
 import '../provider/suraprovider.dart';
@@ -20,10 +21,11 @@ class SuraDetails extends StatelessWidget {
       create: (BuildContext context)=> SuraProvider()..LoadFile(suradetaile.index),
       builder: (context, child) {
         var provider = Provider.of<SuraProvider>(context);
+        var mainProvider = Provider.of<MyProvider>(context);
 
         return Stack(children: [
           Image.asset(
-            'assets/images/main_background.png',
+            mainProvider.bgpath,
             width: double.infinity,
             fit: BoxFit.cover,
           ),
@@ -43,7 +45,7 @@ class SuraDetails extends StatelessWidget {
                 children: [
                   Text(
                     'سورة ${suradetaile.name}',
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                   provider.ayat.isEmpty?CircularProgressIndicator():Expanded(
                       child: Container(
@@ -69,7 +71,7 @@ class SuraDetails extends StatelessWidget {
                               child: Text(
                                 textDirection: TextDirection.rtl ,
                                 ' ${provider.ayat[index]} $ayanum ',
-                                style: Theme.of(context).textTheme.subtitle2,
+                                style: Theme.of(context).textTheme.bodyText2,
                               ),
                             );
                           },

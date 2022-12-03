@@ -5,7 +5,9 @@ import 'package:islami/home_screen/radiotab.dart';
 import 'package:islami/home_screen/sebhatab.dart';
 import 'package:islami/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/provider/my_provider.dart';
 import 'package:islami/setting/setting.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   // const Home({Key? key}) : super(key: key);
@@ -20,10 +22,11 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
     return Stack(
       children: [
         Image.asset(
-          'assets/images/main_background.png',
+          pro.bgpath,
           width: double.infinity,
           fit: BoxFit.cover,
         ),

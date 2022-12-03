@@ -17,13 +17,12 @@ class QuranTab extends StatelessWidget {
             border: TableBorder.all(color: MyTheme.colorGold, width: 5),
             children: [
               TableRow(children: [
-
                 Center(
                     child: Text(AppLocalizations.of(context)!.suraname,
                         style: Theme.of(context).textTheme.subtitle2)),
                 Center(
                     child: Text(
-                      'عدد الأيات',
+                     AppLocalizations.of(context)!.suranum,
                       style: Theme.of(context).textTheme.subtitle2,
                     )),
               ]),

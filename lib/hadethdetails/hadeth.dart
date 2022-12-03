@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami/data.dart';
 import 'package:islami/mytheme.dart';
+import 'package:islami/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethDetails extends StatelessWidget {
   // const hadethDetails({Key? key}) : super(key: key);
@@ -8,13 +10,14 @@ class HadethDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
     var hadeth = ModalRoute
         .of(context)
         ?.settings
         .arguments as AhadethData;
     return Stack(children: [
       Image.asset(
-        'assets/images/main_background.png',
+       pro.bgpath,
         width: double.infinity,
         fit: BoxFit.cover,
       ),
@@ -53,7 +56,7 @@ class HadethDetails extends StatelessWidget {
                         style: Theme
                             .of(context)
                             .textTheme
-                            .subtitle1,
+                            .bodyText2,
                       ),
                       Expanded(child: ListView.builder(
                         itemCount: hadeth.content.length,
@@ -63,7 +66,7 @@ class HadethDetails extends StatelessWidget {
                               '${hadeth.content[index]}', style: Theme
                               .of(context)
                               .textTheme
-                              .subtitle2),);
+                              .bodyText2),);
                         },))
                     ]),
               )))

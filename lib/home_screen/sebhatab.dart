@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami/data.dart';
 import 'package:islami/mytheme.dart';
+import 'package:islami/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   // const QuranTab({Key? key}) : super(key: key);
@@ -16,6 +18,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
     return Container(
       width: double.infinity,
       child: Column(
@@ -25,10 +28,14 @@ class _SebhaTabState extends State<SebhaTab> {
               alignment: Alignment.topCenter,
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 50,top: 10),
+                  margin: EdgeInsets.only(left: 50, top: 10),
                   child: Image.asset(
-                      alignment: Alignment.center,
-                      'assets/images/sebhahead.png'),
+                    alignment: Alignment.center,
+                    'assets/images/sebhahead.png',
+                    color: pro.appmode == ThemeMode.light
+                        ? MyTheme.colorGold
+                        : MyTheme.darkyellow,
+                  ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 90),
@@ -48,7 +55,12 @@ class _SebhaTabState extends State<SebhaTab> {
                       },
                       child: RotationTransition(
                           turns: AlwaysStoppedAnimation(degree / 360),
-                          child: Image.asset('assets/images/sebhabodycolored.png'))),
+                          child: Image.asset(
+                            'assets/images/sebhabodycolored.png',
+                            color: pro.appmode == ThemeMode.light
+                                ? MyTheme.colorGold
+                                : MyTheme.darkyellow,
+                          ))),
                 ),
               ],
             ),
@@ -66,10 +78,12 @@ class _SebhaTabState extends State<SebhaTab> {
             width: 69,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(20)),
-              color: MyTheme.colorGold,
+              color: pro.appmode == ThemeMode.light
+                  ? MyTheme.colorGold
+                  : MyTheme.darkPrim,
             ),
-            child:
-                Text('${count}', style: Theme.of(context).textTheme.subtitle2),
+            child: Text('${count}',
+                style:Theme.of(context).textTheme.subtitle2),
           ),
           SizedBox(
             height: 30,
@@ -77,7 +91,9 @@ class _SebhaTabState extends State<SebhaTab> {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(20)),
-              color: MyTheme.colorGold,
+              color: pro.appmode == ThemeMode.light
+                  ? MyTheme.colorGold
+                  : MyTheme.darkyellow,
             ),
             alignment: Alignment.center,
             height: 51,
@@ -89,8 +105,7 @@ class _SebhaTabState extends State<SebhaTab> {
                 '${AppData.azkar[azkarindex]}',
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle2
-                    ?.copyWith(color: Colors.white),
+                    .bodyText1,
               ),
             ),
           ),

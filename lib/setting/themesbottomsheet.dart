@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami/mytheme.dart';
-import 'package:islami/setting/setting.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../mytheme.dart';
 import '../provider/my_provider.dart';
 
-class LangBottomSheet extends StatelessWidget {
-  // const LangBottomSheet({Key? key}) : super(key: key);
+class ThemesBottomSheet extends StatelessWidget {
+  // const ThemesBottomSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,30 +17,30 @@ class LangBottomSheet extends StatelessWidget {
         children: [
           InkWell(
             onTap: (){
-              pro.changeLanguage('en','English');
+              pro.changeThemeMode(ThemeMode.light,'Light','assets/images/main_background.png');
               Navigator.pop(context);
               // MySettings.CurrentLang=;
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(AppLocalizations.of(context)!.langen,style: Theme.of(context).textTheme.subtitle2),
-                Icon(Icons.done,size: 35,color: pro.LanguageCode!='en'? Colors.transparent : pro.appmode==ThemeMode.light? MyTheme.colorBlack:MyTheme.darkyellow,)
+                Text('Light',style: Theme.of(context).textTheme.subtitle2),
+                Icon(Icons.done,size: 35,color: pro.appmode==ThemeMode.light? MyTheme.colorBlack :Colors.transparent,)
               ],
             ),
           ),
           SizedBox(height: 20,),
           InkWell(
             onTap: (){
-              pro.changeLanguage('ar','العربية');
+              pro.changeThemeMode(ThemeMode.dark,'Dark','assets/images/bg_dark.png');
               Navigator.pop(context);
               // MySettings.CurrentLang=AppLocalizations.of(context)!.langar;
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(AppLocalizations.of(context)!.langar, style: Theme.of(context).textTheme.subtitle2),
-                Icon(Icons.done,size: 35,color: pro.LanguageCode!='ar'? Colors.transparent :pro.appmode==ThemeMode.light? MyTheme.colorBlack:MyTheme.darkyellow,)
+                Text('Dark', style: Theme.of(context).textTheme.subtitle2),
+                Icon(Icons.done,size: 35,color: pro.appmode==ThemeMode.dark?MyTheme.darkyellow: Colors.transparent ,)
               ],
             ),
           )
