@@ -1,6 +1,8 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/setting/langbottomsheet.dart';
+import 'package:islami/setting/themesbottomsheet.dart';
 
 class AppData {
 
@@ -238,6 +240,17 @@ class AppData {
   ];
   static const List<String> azkar = ['سبحان الله','الحمدلله','الله اكبر','لا اله الا الله','لا حول ولا قوة الا بالله'];
 
+
+ static void showLAnguageBottomSheet(BuildContext context){
+    showModalBottomSheet(context: context, builder: (context){
+      return LangBottomSheet();
+    });
+  }
+ static void showthemesBottomSheet(BuildContext context){
+    showModalBottomSheet(context: context, builder: (context){
+      return ThemesBottomSheet();
+    });
+  }
   static String replaceFarsiNumber(String input) {
     const english = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
     const farsi = ['۰', '۱', '۲', '۳', '٤', '۵', '٦', '۷', '۸', '۹'];

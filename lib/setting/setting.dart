@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/data.dart';
 import 'package:islami/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/provider/my_provider.dart';
@@ -24,7 +25,7 @@ class MySettings extends StatelessWidget {
           ),
           InkWell(
             onTap: (){
-              showLAnguageBottomSheet(context);
+              AppData.showLAnguageBottomSheet(context);
             },
             child: Container(
               padding: EdgeInsets.all(12),
@@ -45,7 +46,7 @@ class MySettings extends StatelessWidget {
           ),
           InkWell(
             onTap: (){
-              showthemesBottomSheet(context);
+              AppData.showthemesBottomSheet(context);
             },
             child: Container(
               padding: EdgeInsets.all(12),
@@ -59,14 +60,5 @@ class MySettings extends StatelessWidget {
       ),
     );
   }
-  void showLAnguageBottomSheet(BuildContext context){
-    showModalBottomSheet(context: context, builder: (context){
-      return LangBottomSheet();
-    });
-  }
-  void showthemesBottomSheet(BuildContext context){
-    showModalBottomSheet(context: context, builder: (context){
-      return ThemesBottomSheet();
-    });
-  }
+
 }

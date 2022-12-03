@@ -3,9 +3,9 @@ import 'package:islami/home_screen/ahadethtab.dart';
 import 'package:islami/home_screen/qurantab.dart';
 import 'package:islami/home_screen/radiotab.dart';
 import 'package:islami/home_screen/sebhatab.dart';
-import 'package:islami/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/provider/my_provider.dart';
+import 'package:islami/setting/drawer.dart';
 import 'package:islami/setting/setting.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentindex=0;
+  int currentindex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +31,7 @@ class _HomeState extends State<Home> {
           fit: BoxFit.cover,
         ),
         Scaffold(
+          drawer: SettingDrawer(),
           appBar: AppBar(
             title: Text(
               AppLocalizations.of(context)!.apptitle,
@@ -41,44 +42,49 @@ class _HomeState extends State<Home> {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentindex,
             onTap: (value) {
-              currentindex=value;
-              setState(() {
-
-              });
+              currentindex = value;
+              setState(() {});
             },
             type: BottomNavigationBarType.fixed,
-            items:  [
+            items: [
               BottomNavigationBarItem(
                   // backgroundColor: MyTheme.colorGold,
 
                   label: AppLocalizations.of(context)!.qurantab,
-                  icon: ImageIcon(AssetImage('assets/images/moshaf_blue.png'),size: 30)),
+                  icon: ImageIcon(AssetImage('assets/images/moshaf_blue.png'),
+                      size: 30)),
               BottomNavigationBarItem(
-                // backgroundColor: MyTheme.colorGold,
+                  // backgroundColor: MyTheme.colorGold,
 
                   label: AppLocalizations.of(context)!.ahadeth,
-                  icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),size: 30)),
+                  icon: ImageIcon(AssetImage('assets/images/ahadeth.png'),
+                      size: 30)),
               BottomNavigationBarItem(
-                // backgroundColor: MyTheme.colorGold,
+                  // backgroundColor: MyTheme.colorGold,
 
                   label: AppLocalizations.of(context)!.sebhatab,
-                  icon: ImageIcon(AssetImage('assets/images/sebha_blue.png'),size: 30,)),
+                  icon: ImageIcon(
+                    AssetImage('assets/images/sebha_blue.png'),
+                    size: 30,
+                  )),
               BottomNavigationBarItem(
-                // backgroundColor: MyTheme.colorGold,
-                  label:AppLocalizations.of(context)!.radiotab,
-                  icon: ImageIcon(AssetImage('assets/images/radio_blue.png'),size: 30)),
+                  // backgroundColor: MyTheme.colorGold,
+                  label: AppLocalizations.of(context)!.radiotab,
+                  icon: ImageIcon(AssetImage('assets/images/radio_blue.png'),
+                      size: 30)),
               BottomNavigationBarItem(
-                // backgroundColor: MyTheme.colorGold,
+                  // backgroundColor: MyTheme.colorGold,
                   label: AppLocalizations.of(context)!.settingtab,
                   icon: Icon(Icons.settings)),
             ],
           ),
-        body: tabs[currentindex],
+          body: tabs[currentindex],
         ),
       ],
     );
   }
-  List<Widget> tabs =[
+
+  List<Widget> tabs = [
     QuranTab(),
     AhadethTab(),
     SebhaTab(),
