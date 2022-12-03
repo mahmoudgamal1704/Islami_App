@@ -1,6 +1,21 @@
 {
     "apptitle": "إسلامى",
     "suraname": "إسم السور",
-    "ahadeth": "أحاديث"
+    "suranum": "عدد الايات",
+    "ahadeth": "أحاديث",
+    "langtitle":"اللغة",
+     "modetitle":"شكل البرنامج",
+     "qurantab":"القرأن",
+     "ahadethtab":"الأحاديث",
+     "sebhatab":"سبحة",
+     "radiotab":"الراديو",
+     "settingtab":"الاعدادات",
+     "sebhatxt":"عدد التسبيحات",
+     "radiotxt":"إذاعة القران الكريم",
+     "modelight":"الوضع النهارى",
+     "modedark":"الوضع الليلى",
+
+     "langen":"الانجليزية",
+     "langar":"العربية"
 
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/data.dart';
+import 'package:islami/provider/my_provider.dart';
+import 'package:provider/provider.dart';
 import '../mytheme.dart';
 import '../suradetails/sura.dart';
 import '../suradetails/suramodel.dart';
@@ -10,6 +12,7 @@ class SurasNames extends StatelessWidget {
   SurasNames(this.index);
   @override
   Widget build(BuildContext context) {
+    var pro = Provider.of<MyProvider>(context);
     return Table(
       border: TableBorder(
           verticalInside: BorderSide(width: 5, color: MyTheme.colorGold)),
@@ -27,7 +30,7 @@ class SurasNames extends StatelessWidget {
                       style: Theme.of(context).textTheme.subtitle2)),
             ),
             Center(
-                child: Text('${AppData.replaceFarsiNumber('${AppData.surasNumber[this.index]}')}',
+                child: Text(pro.LanguageCode=='ar'? AppData.replaceFarsiNumber(AppData.surasNumber[index]) : AppData.surasNumber[index],
                     style: Theme.of(context).textTheme.subtitle2)),
           ],
         )
