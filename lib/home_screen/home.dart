@@ -5,6 +5,7 @@ import 'package:islami/home_screen/radiotab.dart';
 import 'package:islami/home_screen/sebhatab.dart';
 import 'package:islami/mytheme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami/setting/setting.dart';
 
 class Home extends StatefulWidget {
   // const Home({Key? key}) : super(key: key);
@@ -63,6 +64,10 @@ class _HomeState extends State<Home> {
                 // backgroundColor: MyTheme.colorGold,
                   label: 'Radio',
                   icon: ImageIcon(AssetImage('assets/images/radio_blue.png'),size: 30)),
+              BottomNavigationBarItem(
+                // backgroundColor: MyTheme.colorGold,
+                  label: 'Settings',
+                  icon: Icon(Icons.settings)),
             ],
           ),
         body: tabs[currentindex],
@@ -75,5 +80,6 @@ class _HomeState extends State<Home> {
     AhadethTab(),
     SebhaTab(),
     RadioTab(),
+    MySettings(),
   ];
 }

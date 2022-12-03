@@ -1,6 +1,12 @@
 {
     "apptitle": "Islamii",
     "suraname": "Sura Name",
-    "ahadeth": "Ahadeth"
+    "ahadeth": "Ahadeth",
+    "langtitle":"Language",
+     "modetitle":"Theme Mode",
+     "langen":"English",
+     "langar":"Arabic"
+
+
 
 }

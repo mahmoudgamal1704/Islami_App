@@ -1,6 +1,10 @@
 {
     "apptitle": "إسلامى",
     "suraname": "إسم السور",
-    "ahadeth": "أحاديث"
+    "ahadeth": "أحاديث",
+    "langtitle":"اللغة",
+     "modetitle":"شكل البرنامج",
+     "langen":"الانجليزية",
+     "langar":"العربية"
 
 }
