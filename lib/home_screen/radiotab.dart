@@ -27,7 +27,7 @@ class RadioTab extends StatelessWidget {
               if (snapshot.hasData) {
                 return RadioController(play,snapshot.data!.radios!);
               }else {
-                return Center(child: Text("No Radio Data"),);
+                return Center(child: CircularProgressIndicator(),);
               }
             },)
 
